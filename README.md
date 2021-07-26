@@ -152,10 +152,18 @@ Now the Jenkinsfile call can be simplified to: `dockerHubPublish("my-docker-imag
 
 ### Writing Tests
 
-TODO: Document writing tests
+Test can be written using the [Spock Framework].  Classes defined in the [src](./src) directory can
+be written for testability and unit tested no different from other classes in other projects.  When testing
+vars, extends the base class [AbstractVarSpecification].  This class has a `loadVar` method
+that will load a var from the [vars](./vars) directory into an interface that is callable. Any cross
+var referencing will call the corresponding var but references to Jenkins provided or Jenkins Plugin
+provided DSL must be mocked in the [MockJenkinsGlobals] class.
 
 [Jenkins Shared Library]: https://www.jenkins.io/doc/book/pipeline/shared-libraries/
 [Gradle]: https://docs.gradle.org/current/userguide/userguide.html
 [Papio Pipelines]: https://github.com/marketplace/papio-pipelines
 [gitHubLibrary]: https://github.com/papiocloudsoftware/papio-pipelines/blob/master/docs/steps/gitHubLibrary.md
 [Method Overloading]: https://www.w3schools.com/java/java_methods_overloading.asp
+[Spock Framework]: https://spockframework.org/spock/docs/2.0/index.html
+[AbstractVarSpecification]: ./test/vars/util/AbstractVarSpecification.groovy
+[MockJenkinsGlobals]: ./test/vars/util/MockJenkinsGlobals.groovy
