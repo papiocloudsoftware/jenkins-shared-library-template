@@ -12,8 +12,9 @@ no updates required to the client repositories!
 ## Getting Started
 
  * Create your own (empty) public/private repository
- * Clone the template repo: `git clone https://github.com/papiocloudsoftware/jenkins-shared-library-template.git`
+ * Clone the template repo: `git clone https://github.com/papiocloudsoftware/jenkins-shared-library-template.git <name-of-your-repo>`
  * Delete the origin and add your own
+   * `cd <name-of-your-repo>`
    * `git remote remove origin`
    * `git remote add origin <url to your repo>`
  * Update the `settings.gradle` `rootProject.name` property to be the name of your repository
