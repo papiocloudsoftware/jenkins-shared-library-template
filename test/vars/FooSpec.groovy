@@ -1,7 +1,7 @@
 package vars
 
+import com.papiocloud.sharedlibs.tests.BaseVarSpecification
 import org.foo.Bar
-import vars.util.AbstractVarSpecification
 
 /**
  * Specification for vars/foo.groovy
@@ -9,7 +9,7 @@ import vars.util.AbstractVarSpecification
  * Must extend AbstractVarSpecification and define an interface that defines the methods
  * in the var.
  */
-class FooSpec extends AbstractVarSpecification {
+class FooSpec extends BaseVarSpecification {
 
     static interface Foo {
         def call()

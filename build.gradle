@@ -5,6 +5,9 @@ plugins {
 
 repositories {
     mavenCentral()
+    maven {
+        url "https://s01.oss.sonatype.org/content/repositories/snapshots/"
+    }
 }
 
 sourceSets {
@@ -23,9 +26,15 @@ sourceSets {
     }
 }
 
+configurations.all {
+    resolutionStrategy.cacheChangingModulesFor 1, 'minutes'
+}
+
 dependencies {
     implementation localGroovy()
 
     testImplementation "org.spockframework:spock-core:1.3-groovy-2.5"
-    testImplementation "cglib:cglib-nodep:3.3.0"
+    testImplementation("com.papiocloud:shared-library-test-framework:1.0.0-SNAPSHOT") {
+        changing = true
+    }
 }

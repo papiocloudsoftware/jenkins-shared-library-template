@@ -14,7 +14,7 @@ pipeline {
       }
       steps {
         sh "git tag -f release"
-        gitPush(followTags: true)
+        gitPush(followTags: true, force: true)
       }
     }
   }
