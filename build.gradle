@@ -5,9 +5,6 @@ plugins {
 
 repositories {
     mavenCentral()
-    maven {
-        url "https://s01.oss.sonatype.org/content/repositories/snapshots/"
-    }
 }
 
 sourceSets {
@@ -34,7 +31,5 @@ dependencies {
     implementation localGroovy()
 
     testImplementation "org.spockframework:spock-core:1.3-groovy-2.5"
-    testImplementation("com.papiocloud:shared-library-test-framework:1.0.0-SNAPSHOT") {
-        changing = true
-    }
+    testImplementation "com.papiocloud:shared-library-test-framework:+"
 }
